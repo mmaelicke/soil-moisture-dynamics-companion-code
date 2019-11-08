@@ -1,0 +1,7 @@
+numpy
+pandas
+scikit-gstat
+scikit-learn
+scipy
+matplotlib
+scikit-info
