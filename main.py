@@ -64,7 +64,7 @@ def plot_ranks(data, ax1, ax2, use_mean=False):
 
 
 def variograms(data, geometries, window=7, N=10, estimator='matheron', maxlag='median', binify='uniform',
-               harmonize=False, cm=plt.cm.Reds, styles=['-b', '--k', ':k'], rank=True):
+               cm=plt.cm.Reds, styles=['-b', '--k', ':k'], rank=True):
     assert len(data) == len(geometries)
    
     # override skgstat's entropy method for using global bins
@@ -86,7 +86,7 @@ def variograms(data, geometries, window=7, N=10, estimator='matheron', maxlag='m
             c = geom.reindex(df_window.index).dropna()
             values = df_window.reindex(c.index).dropna()
             V = skg.Variogram(coordinates=c.values, values=values.values, n_lags=N, estimator=estimator, 
-                              maxlag=maxlag, bin_func=binify, harmonize=harmonize)
+                              maxlag=maxlag, bin_func=binify)
             v[j].append(V)
     return v
 

@@ -5,3 +5,4 @@ scikit-learn
 scipy
 matplotlib
 scikit-info
+rise
